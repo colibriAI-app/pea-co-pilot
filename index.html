@@ -20,7 +20,10 @@
   <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
   <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 
-  <!-- Recharts (UMD) — hébergé dans ce dépôt, zéro CDN -->
+  <!-- ⚠️ prop-types : REQUIS par Recharts UMD, doit être chargé AVANT -->
+  <script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
+
+  <!-- Recharts (UMD) — hébergé dans ce dépôt -->
   <script src="./Recharts.js"></script>
 
   <style>
@@ -45,7 +48,7 @@
         if (root && root.children.length === 0) {
           var d = document.createElement('div');
           d.style.cssText = 'position:fixed;top:50%;left:0;right:0;text-align:center;color:#f87171;padding:12px;font:13px monospace;z-index:99999;';
-          d.textContent = 'App non montée. React=' + (window.React ? 'OK' : 'ABSENT') + ' Recharts=' + (window.Recharts ? 'OK' : 'ABSENT') + ' PeaCoPilot=' + (window.PeaCoPilot ? 'OK' : 'ABSENT');
+          d.textContent = 'App non montée. React=' + (window.React ? 'OK' : 'ABSENT') + ' PropTypes=' + (window.PropTypes ? 'OK' : 'ABSENT') + ' Recharts=' + (window.Recharts ? 'OK' : 'ABSENT') + ' PeaCoPilot=' + (window.PeaCoPilot ? 'OK' : 'ABSENT');
           document.body.appendChild(d);
         }
       }, 3000);
